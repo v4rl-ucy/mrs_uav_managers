@@ -3833,7 +3833,7 @@ void ControlManager::timerJoystick() {
       joystick_buttons_pressed_.at(_channel_A_) &&
       joystick_buttons_pressed_time_.at(_channel_A_).seconds() != 0 &&
       (clock_->now() - joystick_buttons_pressed_time_.at(_channel_A_))
-              .seconds() > 1.0) {
+              .seconds() > 5.0) {
     RCLCPP_INFO(node_->get_logger(), "disarming by joystick");
 
     mrs_msgs::msg::UavDiagnostics uav_msg;
